@@ -1,0 +1,257 @@
+/* Define CSS variables for easy theme management */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8c291;
+    --highlight-color: #ff6f61;
+    --text-color: #fff;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --container-padding: 20px;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Apply global styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+}
+
+/* Navbar styles */
+.navbar {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px 0;  /* Increased padding for a larger size */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for a bold look */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 20px;  /* Larger font size */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 36px;  /* Bigger logo font size */
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1); /* Logo scales on hover */
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    gap: 25px; /* Increased gap between links */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;  /* Larger link font size */
+    font-weight: 600; /* Bold font */
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Advanced Hover Effect for Nav Links */
+.nav-links a::before, 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-links a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-links a:hover::before, 
+.nav-links a:hover::after {
+    width: 100%;  /* Expand the underline on hover */
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);  /* Scale up the links on hover */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  /* Add subtle shadow */
+}
+
+.nav-links .login-btn,
+.nav-links .signup-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 12px 25px; /* Bigger button padding */
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;  /* Larger button font size */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links .login-btn:hover,
+.nav-links .signup-btn:hover {
+    background-color: var(--highlight-color);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Stronger shadow on hover */
+}
+
+
+/* Offers Section */
+.offers {
+    padding: var(--container-padding);
+    background: #f9f9f9;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.offers h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.offer-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--card-shadow);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--secondary-color);
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.offer-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.offer-card:hover img {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.offer-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.offer-text p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
+}
+
+.offer-text p::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.offer-text p:hover::before {
+    width: 70px;
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 30px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--highlight-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}

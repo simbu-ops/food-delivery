@@ -1,0 +1,281 @@
+/* Define CSS variables for easy theme management */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8c291;
+    --highlight-color: #ff6f61;
+    --text-color: #fff;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --container-padding: 20px;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Apply global styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+}
+
+/* Navbar styles */
+.navbar {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 20px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Advanced Hover Effect for Nav Links */
+.nav-links a::before, 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-links a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-links a:hover::before, 
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links .login-btn,
+.nav-links .signup-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links .login-btn:hover,
+.nav-links .signup-btn:hover {
+    background-color: var(--highlight-color);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* FAQ Section */
+.faq {
+    padding: var(--container-padding);
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.faq img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Accordion Styles */
+.faq-accordion {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 1.25rem;
+    text-align: left;
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.accordion:hover {
+    background: var(--highlight-color);
+}
+
+.accordion:focus {
+    outline: none;
+}
+
+.panel {
+    display: none;
+    padding: 1.5rem;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.panel p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+/* Show panel on active accordion */
+.accordion.active + .panel {
+    display: block;
+    max-height: 500px;
+    padding: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .faq {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .faq h1 {
+        font-size: 2rem;
+    }
+
+    .accordion {
+        font-size: 1rem;
+    }
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 30px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--highlight-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}

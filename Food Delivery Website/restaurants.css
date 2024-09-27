@@ -1,0 +1,239 @@
+/* Define CSS variables for easy theme management */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8c291;
+    --text-color: #fff;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --container-padding: 20px;
+    --font-family: 'Roboto', sans-serif;
+    --hover-bg-color: #e07a5f;
+    --gradient-bg: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Apply global styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #000; /* Changed navbar background to black */
+    color: var(--text-color);
+    padding: 20px 0;  /* Increased padding for larger size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--secondary-color);
+    font-size: 20px;  /* Increased font size */
+    transition: transform 0.3s ease; /* Added transition for hover effect */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.navbar .logo a {
+    color: var(--secondary-color); /* Changed logo color to secondary-color for contrast */
+    text-decoration: none;
+    font-size: 32px;  /* Increased logo font size */
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform for hover */
+}
+
+.navbar .logo a:hover {
+    color: #fff; /* Logo changes to white on hover for better visibility */
+    transform: scale(1.1); /* Scale up logo on hover */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Increased gap between links */
+}
+
+.nav-links a {
+    color: var(--secondary-color); /* Changed link color to secondary-color for better contrast with black background */
+    text-decoration: none;
+    font-size: 20px;  /* Increased link font size */
+    font-weight: 600; /* Bold for better visibility */
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform for hover */
+}
+
+.nav-links a::before,
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-links a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+    width: 100%; /* Slide effect on hover */
+}
+
+.nav-links a:hover {
+    color: #fff; /* Link changes to white on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.nav-links .login-btn,
+.nav-links .signup-btn {
+    background-color: var(--secondary-color);
+    color: #000; /* Ensured button text color contrasts well with the background */
+    padding: 12px 25px; /* Increased padding for buttons */
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px; /* Increased button font size */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links .login-btn:hover,
+.nav-links .signup-btn:hover {
+    background-color: var(--hover-bg-color);
+    transform: scale(1.1); /* Scale up buttons on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Restaurant Listings Section */
+.restaurant-listings {
+    padding: var(--container-padding);
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.restaurant-listings h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    background: var(--gradient-bg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.restaurant-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--secondary-color);
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px); /* Lift up the card on hover */
+    box-shadow: 0 8px 12px var(--card-shadow);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Added transform for image hover */
+}
+
+.restaurant-card:hover img {
+    opacity: 0.8;
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.restaurant-info {
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.restaurant-info h3 {
+    font-size: 22px;
+    margin: 0;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 30px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--hover-bg-color);
+    transform: translateX(5px); /* Slight slide effect on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}

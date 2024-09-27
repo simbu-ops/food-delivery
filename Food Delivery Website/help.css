@@ -1,0 +1,261 @@
+/* Define CSS variables */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8c291;
+    --highlight-color: #e07a5f;
+    --text-color: #fff;
+    --bg-color: #f4f4f4;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    --container-padding: 20px;
+    --font-family: 'Roboto', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* Flex Utility */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    padding: 0 var(--container-padding);
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: transform var(--transition-speed), color var(--transition-speed);
+}
+
+.navbar .logo a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    gap: 25px; /* Increased gap between links */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;  /* Larger link font size */
+    font-weight: 600; /* Bold font */
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Advanced Hover Effect for Nav Links */
+.nav-links a::before, 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-links a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-links a:hover::before, 
+.nav-links a:hover::after {
+    width: 100%;  /* Expand the underline on hover */
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);  /* Scale up the links on hover */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  /* Add subtle shadow */
+}
+
+.nav-links .login-btn,
+.nav-links .signup-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 12px 25px; /* Bigger button padding */
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;  /* Larger button font size */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links .login-btn:hover,
+.nav-links .signup-btn:hover {
+    background-color: var(--highlight-color);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Stronger shadow on hover */
+}
+
+/* Help Section */
+.help {
+    padding: var(--container-padding);
+    background: linear-gradient(135deg, #f4f4f4, #e5e5e5);
+}
+
+.help h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    animation: fadeInDown 1s ease-out; /* Animate the heading on load */
+}
+
+.help-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Fluid grid layout */
+    gap: 30px;
+}
+
+.help-item {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--card-shadow);
+    padding: 25px;
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+}
+
+.help-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+    background-color: #fafafa; /* Subtle background change on hover */
+}
+
+.help-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.help-item p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.help-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.help-item a:hover {
+    color: var(--highlight-color);
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 40px 0;
+    border-top: 5px solid var(--highlight-color);
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-sections {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    letter-spacing: 1.2px;
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.footer-section a:hover {
+    color: var(--highlight-color);
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

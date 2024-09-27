@@ -1,0 +1,244 @@
+/* Define CSS variables */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8c291;
+    --text-color: #fff;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    --container-padding: 20px;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Apply global styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 0; /* Increased padding for a more substantial look */
+    font-size: 18px; /* Increased font size for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+    border-bottom: 3px solid var(--secondary-color); /* Added border for emphasis */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 28px; /* Increased logo font size for prominence */
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+}
+
+.navbar .logo a:hover {
+    color: var(--secondary-color); /* Logo color change on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Increased gap for better spacing */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px; /* Increased font size for links */
+    font-weight: 600; /* Semi-bold for better visibility */
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 8px; /* Rounded corners for links */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Enhanced transitions */
+}
+
+.nav-links a::before,
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.4s ease-in-out; /* Smooth underline effect */
+}
+
+.nav-links a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-links a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color); /* Link color change on hover */
+    background-color: rgba(248, 194, 145, 0.2); /* Light background color on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.nav-links .login-btn,
+.nav-links .signup-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px; /* Increased padding for buttons */
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px; /* Button font size */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Enhanced transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow to buttons */
+}
+
+.nav-links .login-btn:hover,
+.nav-links .signup-btn:hover {
+    background-color: #e07a5f; /* Button color change on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+
+/* Signup Section */
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: var(--container-padding);
+}
+
+.signup .container {
+    max-width: 400px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--card-shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+.signup h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #666;
+}
+
+.form-group input {
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e07a5f;
+}
+
+.login-redirect {
+    margin-top: 15px;
+}
+
+.login-redirect a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-redirect a:hover {
+    color: #e07a5f;
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 30px 0;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #e07a5f;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}

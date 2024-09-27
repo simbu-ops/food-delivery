@@ -1,0 +1,253 @@
+/* Define CSS variables */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8c291;
+    --highlight-color: #ff6f61;
+    --text-color: #fff;
+    --background-color: #f4f4f4;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    --container-padding: 20px;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Apply global styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    background: linear-gradient(to right, #e0e0e0, #f4f4f4);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 0; /* Slightly increased padding for better visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 28px; /* Slightly increased font size for logo */
+    font-weight: 800; /* Stronger emphasis on logo weight */
+    letter-spacing: 2px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: var(--secondary-color); /* Color change on hover */
+    transform: scale(1.1); /* Slightly larger logo on hover */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Increased spacing between links for a clean look */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px; /* Increased font size for better readability */
+    font-weight: 600;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a::before,
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-links a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+    width: 100%; /* Full underline animation on hover */
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color); /* Change text color on hover */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow effect on hover */
+    transform: scale(1.05); /* Slight scale-up effect on hover */
+    background: rgba(248, 194, 145, 0.15); /* Light background on hover */
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
+    background-color: rgba(248, 194, 145, 0.25); /* Active link background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for active link */
+}
+
+.nav-links .login-btn,
+.nav-links .signup-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 50px; /* Rounded-pill style for buttons */
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links .login-btn:hover,
+.nav-links .signup-btn:hover {
+    background-color: #e07a5f;
+    transform: translateY(-3px); /* Lift buttons on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+/* About Us Section */
+.about-us {
+    padding: var(--container-padding);
+    background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.about-us h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us .intro {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.about-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.history, .mission, .team {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history:hover, .mission:hover, .team:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.team-members {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 10%;
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 30px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--highlight-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}

@@ -1,0 +1,309 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Google Font for a modern look */
+    background-color: #f4f7f9; /* Slightly lighter background */
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: purple; /* Solid background color */
+    padding: 1.5rem 0; /* Increased padding for a more spacious look */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Roboto', sans-serif; /* Modern and clean font */
+}
+
+/* Logo Styling */
+.navbar .logo a {
+    font-size: 2rem; /* Larger font for better emphasis */
+    color: #ffeb3b;
+    font-weight: 800; /* Bold font for more prominence */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    letter-spacing: 1.5px; /* Increased letter spacing for elegance */
+}
+
+.navbar .logo a:hover {
+    color: #ffeb3b; /* Bright hover color */
+    transform: scale(1.1); /* Slight enlargement for emphasis */
+}
+
+/* Navigation Links */
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    margin-left: 2rem;
+    color: white; /* Default text color */
+    text-decoration: none;
+    font-size: 1.2rem; /* Slightly larger font for better readability */
+    font-weight: 600; /* Medium weight for a balanced look */
+    position: relative;
+    overflow: hidden; /* Ensure the reveal effect is confined within the element */
+    transition: color 0.3s ease;
+    letter-spacing: 1px; /* Subtle letter spacing for a sleek look */
+}
+
+/* Reveal Hover Effect */
+.navbar .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px; /* Thickness of the underline */
+    background-color: #ffeb3b; /* Color of the reveal underline */
+    transform: translateX(-100%); /* Initially hide the underline */
+    transition: transform 0.3s ease; /* Smooth reveal animation */
+}
+
+.navbar .nav-links a:hover::before {
+    transform: translateX(0); /* Reveal the underline on hover */
+}
+
+.navbar .nav-links a:hover {
+    color: white; /* Change text color on hover */
+    transform: scale(1.09);
+}
+
+/* Signup Button */
+.navbar .signup-btn {
+    background-color: black;
+    color: #ffeb3b;
+    padding: 0.7rem 1.8rem; /* Increased padding for better proportions */
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1rem; /* Larger font for more impact */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effect */
+}
+
+.navbar .signup-btn:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('taylor-kiser-N7buN8Lv7uQ-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Overlay for better text visibility */
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2; /* Make sure content is above the overlay */
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Larger heading for impact */
+    margin-bottom: 1rem;
+    font-weight: 700; /* Bold font for emphasis */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+.search-bar input {
+    padding: 1rem;
+    width: 300px;
+    border: 2px solid purple; /* Border with accent color */
+    border-radius: 5px;
+    margin-right: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: violet; /* Focus border color */
+}
+
+.search-bar button {
+    padding: 1rem;
+    border: none;
+    background-color:purple;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: violet;
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Restaurant Listings */
+.restaurant-listings {
+    margin: 4rem 0;
+}
+
+.restaurant-listings h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Larger font size */
+    font-weight: 700; /* Bolder font */
+}
+
+.restaurant-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    border-radius: 10px;
+    width: 22%;
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.restaurant-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.restaurant-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.restaurant-card h3 {
+    font-size: 1.6rem; /* Slightly larger heading */
+    margin-bottom: 0.5rem;
+    color: #ff6f61; /* Accent color for headings */
+}
+
+/* Offers Section */
+.offers {
+    background-color: #fff5e6;
+    padding: 4rem 0;
+}
+
+.offers h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Larger font size */
+    font-weight: 700; /* Bolder font */
+}
+
+.offers-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.offer-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.offer-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(90deg, #333, #444); /* Gradient background */
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem; /* Larger font size */
+    font-weight: 700; /* Bolder font */
+    border-bottom: 2px solid #ff6f61; /* Accent border */
+    padding-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-section a:hover {
+    color: #ff6f61; /* Hover color */
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    font-size: 0.9rem; /* Slightly larger font size */
+}

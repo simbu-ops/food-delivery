@@ -1,0 +1,189 @@
+/* Define CSS variables */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8c291;
+    --text-color: #fff;
+    --background-color: #f4f4f4;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --container-padding: 20px;
+    --font-family: 'Roboto', sans-serif;
+    --hover-bg-color: rgba(248, 194, 145, 0.1); /* Subtle background for hover effects */
+}
+
+/* Apply global styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 0; /* Slightly increased padding for better spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for elevated look */
+    transition: background-color 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1); /* Slight scaling effect for the logo */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Increased gap for better readability */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--secondary-color);
+    background-color: var(--hover-bg-color); /* Soft background color on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Terms and Conditions Section */
+.terms-conditions {
+    padding: var(--container-padding);
+    background: linear-gradient(to bottom, #fff, #f4f4f4);
+    animation: fadeIn 1s ease-out; /* Fade-in effect for the section */
+}
+
+.terms-conditions h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.content h2 {
+    margin-top: 30px;
+    color: var(--primary-color);
+    font-size: 1.75em;
+    border-bottom: 2px solid var(--secondary-color); /* Stylish bottom border */
+    padding-bottom: 5px;
+}
+
+.content p {
+    margin-bottom: 20px;
+    color: #666;
+    text-align: justify;
+    transition: color 0.3s ease;
+}
+
+.content p:hover {
+    color: var(--primary-color); /* Color change on paragraph hover */
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 40px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle top shadow for footer */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    gap: 50px; /* Increased gap for a cleaner layout */
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #e07a5f;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8; /* Slight transparency for footer text */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
